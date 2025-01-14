@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">{{ course.name }} ({{ course.code }})</h1>
+    <div class="card">
+        <div class="card-header text-white bg-primary">
+            <h5 class="text-center mb-0">Course Information</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+            <p><strong>Semester:</strong> {{ course.semester }}</p>
+            <p><strong>Schedule:</strong> {{ course.schedule }}</p>
+            <p><strong>Classroom:</strong> {{ course.classroom }}</p>
+            <p><strong>Prerequisites:</strong> {{ course.prerequisites }}</p>
+            <p><strong>Grading:</strong> {{ course.grading }}</p>
+            <p><strong>Description:</strong> {{ course.description }}</p>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{{ url_for('course_catalog') }}" class="btn btn-danger">Back to Catalog</a>
+    </div>
+</div>
+{% endblock %}
