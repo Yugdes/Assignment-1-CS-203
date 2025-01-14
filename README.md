@@ -35,7 +35,8 @@ Ensure that Docker Desktop is installed on your machine. If you haven't installe
 To run Jaeger using Docker, open the Docker terminal and enter the following command:
 
 ```bash
-docker run -d -p 16686:16686 -p 6831:6831/udp jaegertracing/all-in-one:latest
+docker run -d --name jaeger -e COLLECTOR_OTLP_ENABLED=true -p 4317:4317 -p 16686:16686 jaegertracing/all-in-one:1.46
+
 ```
 ### Open the Jaeger UI in the browser
 ```bash
